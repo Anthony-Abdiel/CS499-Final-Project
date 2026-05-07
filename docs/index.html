@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>CS499 Final Project | Robust Biomedical Image Analysis</title>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="hero">
+    <nav class="navbar">
+      <div class="nav-title">CS499 Final Project</div>
+
+      <div class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#datasets">Datasets</a>
+        <a href="#models">Models</a>
+        <a href="#results">Results</a>
+        <a href="#conclusions">Conclusions</a>
+      </div>
+    </nav>
+
+    <section class="hero-content">
+      <p class="eyebrow">Biomedical Image Classification & Counting</p>
+
+      <h1>Robust Cell Image Classification and Counting</h1>
+
+      <p class="hero-subtitle">
+        A comparison of a Lightweight CNN, ResNet-18, and Vision Transformer on biomedical
+        image classification and counting tasks, with additional testing under blur and noise.
+      </p>
+
+      <div class="hero-buttons">
+        <a class="button primary" href="#results">View Results</a>
+        <a class="button secondary" href="https://github.com/Anthony-Abdiel/CS499-Final-Project" target="_blank">
+          View Repository
+        </a>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section id="overview" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Project Overview</p>
+        <h2>What this project is about</h2>
+      </div>
+
+      <div class="card">
+        <p>
+          This project explores how different deep learning models perform on biomedical
+          image analysis tasks. The first task focuses on classifying blood cell images,
+          while the second task focuses on estimating the number of cells in microscopy images.
+        </p>
+
+        <p>
+          Rather than only looking at performance on clean images, this project also tests
+          how the models behave when the images are degraded with blur and noise. This was
+          important because real biomedical images are not always perfect. They may be blurry,
+          noisy, out of focus, or affected by differences in the image collection process.
+        </p>
+
+        <p>
+          The overall goal was to compare model accuracy, counting performance, and robustness
+          in a way that gives a more realistic view of each model's strengths and weaknesses.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Research Question</p>
+        <h2>How reliable are these models when image quality changes?</h2>
+      </div>
+
+      <div class="highlight-card">
+        <p>
+          How do CNN-based models and transformer-based models compare on biomedical
+          classification and counting tasks, especially when the input images are affected
+          by blur or noise?
+        </p>
+      </div>
+    </section>
+
+    <section id="datasets" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Datasets</p>
+        <h2>Biomedical image datasets used</h2>
+      </div>
+
+      <div class="grid two-column">
+        <article class="card">
+          <h3>BloodMNIST</h3>
+          <p>
+            BloodMNIST was used for the classification portion of the project. The goal
+            was to train each model to classify small blood cell images into the correct
+            cell category.
+          </p>
+
+          <ul>
+            <li>Task: image classification</li>
+            <li>Data type: blood cell images</li>
+            <li>Metric focus: test accuracy and validation accuracy</li>
+            <li>Robustness tests: Gaussian blur and Gaussian noise</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>BBBC005</h3>
+          <p>
+            BBBC005 was used for the counting portion of the project. Instead of predicting
+            a class label, the models had to estimate the number of cells in each image.
+          </p>
+
+          <ul>
+            <li>Task: cell counting / regression</li>
+            <li>Data type: synthetic microscopy images</li>
+            <li>Metric focus: MAE and RMSE</li>
+            <li>Robustness tests: built-in blur levels and Gaussian noise</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="models" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Models</p>
+        <h2>Architectures compared</h2>
+      </div>
+
+      <div class="grid three-column">
+        <article class="card model-card">
+          <h3>Lightweight CNN</h3>
+          <p>
+            The Lightweight CNN was the simplest model in the comparison. It served as a
+            practical baseline to see how far a smaller convolutional model could go without
+            the complexity of larger pretrained architectures.
+          </p>
+        </article>
+
+        <article class="card model-card">
+          <h3>ResNet-18</h3>
+          <p>
+            ResNet-18 was included as a strong CNN-based model. Its residual connections
+            allow it to learn deeper feature representations, making it a useful comparison
+            point against both the Lightweight CNN and the Vision Transformer.
+          </p>
+        </article>
+
+        <article class="card model-card">
+          <h3>Vision Transformer</h3>
+          <p>
+            The Vision Transformer uses image patches and self-attention instead of relying
+            only on convolutional filters. This made it useful for comparing a transformer-based
+            image model against more traditional CNN approaches.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Method</p>
+        <h2>Experimental approach</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <span>1</span>
+          <p>Train each model on the normal training data for the selected task.</p>
+        </div>
+
+        <div class="timeline-item">
+          <span>2</span>
+          <p>Evaluate each trained model on clean test images.</p>
+        </div>
+
+        <div class="timeline-item">
+          <span>3</span>
+          <p>Apply blur and noise corruptions to test how performance changes.</p>
+        </div>
+
+        <div class="timeline-item">
+          <span>4</span>
+          <p>Compare the models across accuracy, error, robustness, and practicality.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="results" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Results</p>
+        <h2>Classification results on BloodMNIST</h2>
+      </div>
+
+      <div class="figure-card">
+        <img
+          src="resources/classifying/visualizations/results_plots/bloodmnist_clean_test_accuracy_bar.png"
+          alt="BloodMNIST clean test accuracy bar chart"
+        />
+        <div class="figure-caption">
+          <h3>Clean Test Accuracy</h3>
+          <p>
+            On the clean BloodMNIST test set, all three models performed strongly. ViT-B/16
+            and ResNet-18 were very close near the top, while the Lightweight CNN was slightly
+            lower but still competitive. This shows that even the simpler CNN learned useful
+            features for the classification task.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid two-column">
+        <div class="figure-card">
+          <img
+            src="resources/classifying/visualizations/results_plots/bloodmnist_blur_test_accuracy.png"
+            alt="BloodMNIST blur robustness accuracy plot"
+          />
+          <div class="figure-caption">
+            <h3>Blur Robustness</h3>
+            <p>
+              The blur test shows a clear difference in robustness. ViT-B/16 and ResNet-18
+              remained highly stable as blur increased, while the Lightweight CNN dropped
+              more noticeably. This suggests that the larger models were better at preserving
+              classification performance when image detail became less sharp.
+            </p>
+          </div>
+        </div>
+
+        <div class="figure-card">
+          <img
+            src="resources/classifying/visualizations/results_plots/bloodmnist_noise_test_accuracy.png"
+            alt="BloodMNIST noise robustness accuracy plot"
+          />
+          <div class="figure-caption">
+            <h3>Noise Robustness</h3>
+            <p>
+              Noise affected the models more differently than blur. ViT-B/16 stayed strong
+              across all tested noise levels, while ResNet-18 dropped sharply at the highest
+              noise level. The Lightweight CNN also declined, but its drop was more gradual.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid two-column">
+        <div class="figure-card">
+          <img
+            src="resources/classifying/visualizations/training_plots/bloodmnist_val_accuracy_vs_epoch.png"
+            alt="BloodMNIST validation accuracy over training epochs"
+          />
+          <div class="figure-caption">
+            <h3>Validation Accuracy</h3>
+            <p>
+              The validation accuracy curves show that ResNet-18 and ViT-B/16 reached high
+              accuracy fairly quickly. The Lightweight CNN improved more gradually, but still
+              reached a solid level of performance by the end of training.
+            </p>
+          </div>
+        </div>
+
+        <div class="figure-card">
+          <img
+            src="resources/classifying/visualizations/training_plots/bloodmnist_val_loss_vs_epoch.png"
+            alt="BloodMNIST validation loss over training epochs"
+          />
+          <div class="figure-caption">
+            <h3>Validation Loss</h3>
+            <p>
+              The validation loss curves give another view of the training behavior. ViT-B/16
+              generally maintained low validation loss, while ResNet-18 showed more variation
+              from epoch to epoch. The Lightweight CNN improved steadily, though it did not
+              reach the same low-loss region as consistently.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="figure-card">
+        <img
+          src="resources/classifying/visualizations/bloodmnist_corruption_visualization.png"
+          alt="BloodMNIST image corruption visualization"
+        />
+        <div class="figure-caption">
+          <h3>BloodMNIST Corruption Examples</h3>
+          <p>
+            These examples show how the BloodMNIST images change under the corruption settings.
+            The goal was to test the models under conditions that reduce visual quality while
+            still preserving the general structure of the input image.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Results</p>
+        <h2>Counting results on BBBC005</h2>
+      </div>
+
+      <div class="figure-card">
+        <img
+          src="resources/counting/visualizations/results_plots/bbbc005_clean_test_mae_bar.png"
+          alt="BBBC005 clean test MAE bar chart"
+        />
+        <div class="figure-caption">
+          <h3>Clean Test MAE</h3>
+          <p>
+            On clean BBBC005 images, ViT-B/16 achieved the lowest mean absolute error, followed
+            by ResNet-18 and then the Lightweight CNN. The differences were not extreme, which
+            suggests that all three models learned the counting task reasonably well under normal
+            image conditions.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid two-column">
+        <div class="figure-card">
+          <img
+            src="resources/counting/visualizations/results_plots/bbbc005_blur_test_mae.png"
+            alt="BBBC005 blur test MAE plot"
+          />
+          <div class="figure-caption">
+            <h3>Blur Robustness: MAE</h3>
+            <p>
+              Under increasing blur, ResNet-18 became much less reliable for counting. Its MAE
+              rose quickly as blur increased. The Lightweight CNN changed more slowly, and
+              ViT-B/16 stayed in the middle, showing better stability than ResNet-18 but not
+              always beating the Lightweight CNN.
+            </p>
+          </div>
+        </div>
+
+        <div class="figure-card">
+          <img
+            src="resources/counting/visualizations/results_plots/bbbc005_blur_test_rmse.png"
+            alt="BBBC005 blur test RMSE plot"
+          />
+          <div class="figure-caption">
+            <h3>Blur Robustness: RMSE</h3>
+            <p>
+              The RMSE results tell a similar story. ResNet-18 became increasingly sensitive
+              as blur level increased, meaning its larger errors became more severe. The
+              Lightweight CNN was surprisingly stable, especially compared with ResNet-18.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid two-column">
+        <div class="figure-card">
+          <img
+            src="resources/counting/visualizations/results_plots/bbbc005_noise_test_mae.png"
+            alt="BBBC005 noise test MAE plot"
+          />
+          <div class="figure-caption">
+            <h3>Noise Robustness: MAE</h3>
+            <p>
+              Gaussian noise had a major effect on the counting task. ResNet-18 was especially
+              sensitive, with error increasing dramatically once noise was introduced. ViT-B/16
+              handled noise much better, while the Lightweight CNN also remained more usable
+              than ResNet-18 at higher noise levels.
+            </p>
+          </div>
+        </div>
+
+        <div class="figure-card">
+          <img
+            src="resources/counting/visualizations/results_plots/bbbc005_noise_test_rmse.png"
+            alt="BBBC005 noise test RMSE plot"
+          />
+          <div class="figure-caption">
+            <h3>Noise Robustness: RMSE</h3>
+            <p>
+              The RMSE plot makes the severity of the noise effect even clearer. ResNet-18
+              produced much larger errors under noise, while ViT-B/16 stayed comparatively
+              stable. This supports the conclusion that ViT-B/16 was the most robust model
+              in the counting experiments.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid three-column">
+        <div class="figure-card compact">
+          <img
+            src="resources/counting/visualizations/training_plots/bbbc005_val_loss_vs_epoch.png"
+            alt="BBBC005 validation loss over epochs"
+          />
+          <div class="figure-caption">
+            <h3>Validation Loss</h3>
+            <p>
+              The counting validation loss decreased heavily during early training, especially
+              for the larger models. Later epochs show smaller improvements and some instability.
+            </p>
+          </div>
+        </div>
+
+        <div class="figure-card compact">
+          <img
+            src="resources/counting/visualizations/training_plots/bbbc005_val_mae_vs_epoch.png"
+            alt="BBBC005 validation MAE over epochs"
+          />
+          <div class="figure-caption">
+            <h3>Validation MAE</h3>
+            <p>
+              Validation MAE improved quickly at first, then leveled off. ViT-B/16 eventually
+              became the most consistent, while the Lightweight CNN had occasional spikes.
+            </p>
+          </div>
+        </div>
+
+        <div class="figure-card compact">
+          <img
+            src="resources/counting/visualizations/training_plots/bbbc005_val_rmse_vs_epoch.png"
+            alt="BBBC005 validation RMSE over epochs"
+          />
+          <div class="figure-caption">
+            <h3>Validation RMSE</h3>
+            <p>
+              The RMSE curve highlights larger counting mistakes. The Lightweight CNN had
+              more visible spikes, while ViT-B/16 settled into a more stable range later in training.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="figure-card">
+        <img
+          src="resources/counting/visualizations/bbbc005_corruption_visualization.png"
+          alt="BBBC005 image corruption visualization"
+        />
+        <div class="figure-caption">
+          <h3>BBBC005 Corruption Examples</h3>
+          <p>
+            These examples show how blur and noise change the microscopy images used in the
+            counting task. Since counting depends heavily on object visibility, these corruptions
+            can make the regression problem much harder than the clean-image version.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="conclusions" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Conclusions</p>
+        <h2>What the results suggest</h2>
+      </div>
+
+      <div class="grid three-column">
+        <article class="card">
+          <h3>ViT-B/16 was the strongest overall</h3>
+          <p>
+            ViT-B/16 performed strongly in both the classification and counting experiments.
+            It also showed strong robustness against blur and noise, especially compared with
+            the other models in the counting task.
+          </p>
+
+          <p>
+            This was one of the more interesting results because the project used limited
+            biomedical data. Even with that constraint, the Vision Transformer still provided
+            strong performance and stability.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>The Lightweight CNN stayed competitive</h3>
+          <p>
+            The Lightweight CNN was not always the best model, but it held up well in many
+            parts of the project. In some robustness tests, especially counting under blur,
+            it was more stable than expected.
+          </p>
+
+          <p>
+            This suggests that simpler architectures can still provide real value, especially
+            in situations where compute resources, training time, or deployment complexity
+            matter.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>ResNet-18 was strong but fragile</h3>
+          <p>
+            ResNet-18 performed well under clean conditions and was a strong model overall.
+            However, it showed severe sensitivity to image corruption, especially in the
+            counting experiments.
+          </p>
+
+          <p>
+            The noise results in particular suggest that strong clean-image performance does
+            not always translate into robust performance when image quality gets worse.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="takeaways" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Discussion</p>
+        <h2>Key takeaways</h2>
+      </div>
+
+      <div class="grid two-column">
+        <article class="card">
+          <h3>Clean performance is only part of the story</h3>
+          <p>
+            A model can look very strong on normal test data but still struggle when the input
+            images are degraded. The corruption experiments helped reveal differences that clean
+            test accuracy alone would not show.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Counting was more sensitive than classification</h3>
+          <p>
+            The counting task reacted more dramatically to corruption than the classification
+            task. This makes sense because counting depends heavily on local object visibility,
+            and blur or noise can directly interfere with that.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Model complexity is not automatically better</h3>
+          <p>
+            Larger models can be powerful, but the Lightweight CNN showed that simpler models
+            can still be useful. For limited-resource settings, a smaller model may be easier
+            to train, run, and deploy.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Robustness should be part of model evaluation</h3>
+          <p>
+            For biomedical imaging, it is not enough to ask which model performs best in ideal
+            conditions. A useful model should also be tested under conditions that resemble
+            real-world image quality problems.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Limitations</p>
+        <h2>Important constraints</h2>
+      </div>
+
+      <div class="card">
+        <ul class="limitations-list">
+          <li>Biomedical datasets can be limited in size compared to general image datasets.</li>
+          <li>Some models required image resizing, which may affect fine image details.</li>
+          <li>BBBC005 is synthetic, so performance may not fully represent real microscopy data.</li>
+          <li>Artificial blur and noise do not cover every possible real-world imaging problem.</li>
+          <li>Pretrained models may not transfer perfectly from natural images to biomedical images.</li>
+          <li>Only a small set of model architectures was tested, so the results are not exhaustive.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Reproducibility</p>
+        <h2>Code and setup</h2>
+      </div>
+
+      <div class="card">
+        <p>
+          The GitHub repository contains the project source code, training scripts,
+          evaluation scripts, result visualizations, and setup instructions. The experiments
+          were organized separately for classification and counting to keep the workflow clear.
+        </p>
+
+        <a class="button primary" href="https://github.com/Anthony-Abdiel/CS499-Final-Project" target="_blank">
+          Open GitHub Repository
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Acknowledgements</p>
+        <h2>Datasets and tools</h2>
+      </div>
+
+      <div class="card">
+        <p>
+          This project uses BloodMNIST from the MedMNIST collection and BBBC005 from the
+          Broad Bioimage Benchmark Collection. The experiments were implemented using
+          Python, PyTorch, torchvision, NumPy, pandas, matplotlib, scikit-learn, tqdm,
+          and Pillow.
+        </p>
+
+        <p>
+          This project was completed as part of a CS499 final project focused on biomedical
+          image analysis, model comparison, and robustness evaluation.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>CS499 Final Project — Anthony Narvaez</p>
+  </footer>
+</body>
+</html>

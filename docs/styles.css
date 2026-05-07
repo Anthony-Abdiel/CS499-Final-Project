@@ -1,0 +1,406 @@
+:root {
+  --bg: #f4f7fb;
+  --surface: #ffffff;
+  --surface-soft: #eef4ff;
+  --text: #172033;
+  --muted: #5f6b7a;
+  --primary: #1d4ed8;
+  --primary-dark: #153e9f;
+  --border: #d9e2ef;
+  --shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  --radius: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+}
+
+.hero {
+  background:
+    linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 64, 175, 0.88)),
+    radial-gradient(circle at top left, rgba(96, 165, 250, 0.4), transparent 35%);
+  color: white;
+  padding-bottom: 5rem;
+}
+
+.navbar {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-title {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: rgba(255, 255, 255, 0.88);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+.hero-content {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem 0;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  color: var(--primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.78rem;
+}
+
+.hero .eyebrow {
+  color: #bfdbfe;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  line-height: 1.05;
+  letter-spacing: -0.05em;
+}
+
+.hero-subtitle {
+  max-width: 760px;
+  margin: 1.5rem auto 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 1.2rem;
+}
+
+.hero-buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.75rem 1.1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button.primary {
+  background: var(--primary);
+  color: white;
+}
+
+.button.primary:hover {
+  background: var(--primary-dark);
+}
+
+.button.secondary {
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.section {
+  margin-bottom: 4rem;
+  scroll-margin-top: 2rem;
+}
+
+.section-heading {
+  max-width: 780px;
+  margin-bottom: 1.5rem;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+
+.card,
+.figure-card,
+.highlight-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.card {
+  padding: 1.5rem;
+}
+
+.card p:first-child {
+  margin-top: 0;
+}
+
+.card p:last-child {
+  margin-bottom: 0;
+}
+
+.card h3,
+.figure-caption h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.card ul {
+  padding-left: 1.25rem;
+  margin-bottom: 0;
+}
+
+.highlight-card {
+  padding: 2rem;
+  background: var(--surface-soft);
+  border-color: #bfdbfe;
+}
+
+.highlight-card p {
+  max-width: 900px;
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e3a8a;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.two-column {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.three-column {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.model-card {
+  min-height: 210px;
+}
+
+.timeline {
+  display: grid;
+  gap: 1rem;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  box-shadow: var(--shadow);
+}
+
+.timeline-item span {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  font-weight: 800;
+}
+
+.timeline-item p {
+  margin: 0;
+  font-weight: 600;
+}
+
+.figure-card {
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.figure-card img {
+  background: white;
+  padding: 1rem;
+}
+
+.figure-card.compact img {
+  padding: 0.75rem;
+}
+
+.figure-caption {
+  border-top: 1px solid var(--border);
+  padding: 1rem 1.25rem;
+}
+
+.figure-caption p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.limitations-list {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.limitations-list li {
+  margin-bottom: 0.5rem;
+}
+
+footer {
+  background: #0f172a;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+@media (max-width: 850px) {
+  .navbar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero-content {
+    padding-top: 3rem;
+    text-align: left;
+  }
+
+  .hero-buttons {
+    justify-content: flex-start;
+  }
+
+  .two-column,
+  .three-column {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .nav-links {
+    display: none;
+  }
+
+  main {
+    padding-inline: 1rem;
+  }
+
+  .card,
+  .highlight-card {
+    padding: 1.15rem;
+  }
+
+  .figure-card img {
+    padding: 0.5rem;
+  }
+}
+
+/* Result layout helpers */
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.result-grid .figure-card {
+  margin-bottom: 0;
+}
+
+/* Keeps graph cards visually balanced when two are on one row */
+.figure-card img {
+  min-height: 280px;
+  object-fit: contain;
+}
+
+/* Optional: makes the text area of graph cards feel more consistent */
+.figure-caption {
+  min-height: 150px;
+}
+
+/* Smaller cards, such as training curves, can have shorter captions */
+.figure-card.compact .figure-caption {
+  min-height: 120px;
+}
+
+/* Preserve mobile friendliness */
+@media (max-width: 850px) {
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .figure-caption {
+    min-height: auto;
+  }
+
+  .figure-card img {
+    min-height: auto;
+  }
+}
+
+.graph-note-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 360px;
+}
