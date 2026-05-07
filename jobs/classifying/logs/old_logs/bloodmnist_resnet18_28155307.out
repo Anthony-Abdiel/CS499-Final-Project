@@ -1,0 +1,2 @@
+Using device: cuda
+Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /home/aan266/.cache/torch/hub/checkpoints/resnet18-f37072fd.pth

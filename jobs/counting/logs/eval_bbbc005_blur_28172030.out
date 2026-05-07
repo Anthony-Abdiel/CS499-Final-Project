@@ -1,0 +1,108 @@
+Using device: cuda
+F1/w2 total samples: 600
+Matched logical test samples: 90
+
+Loaded Lightweight CNN checkpoint | Best Epoch: 30 | Best Val MAE: 1.8795
+Lightweight CNN | Blur Level: F1 | Test Loss: 7.2184 | Test MAE: 2.1409 | Test RMSE: 2.6867
+Lightweight CNN | Blur Level: F4 | Test Loss: 7.2543 | Test MAE: 2.1439 | Test RMSE: 2.6934
+Lightweight CNN | Blur Level: F7 | Test Loss: 7.3449 | Test MAE: 2.1602 | Test RMSE: 2.7101
+Lightweight CNN | Blur Level: F10 | Test Loss: 7.4248 | Test MAE: 2.1698 | Test RMSE: 2.7249
+Lightweight CNN | Blur Level: F14 | Test Loss: 7.4850 | Test MAE: 2.1762 | Test RMSE: 2.7359
+Lightweight CNN | Blur Level: F17 | Test Loss: 7.4875 | Test MAE: 2.1774 | Test RMSE: 2.7363
+Lightweight CNN | Blur Level: F20 | Test Loss: 7.4879 | Test MAE: 2.1720 | Test RMSE: 2.7364
+Lightweight CNN | Blur Level: F23 | Test Loss: 7.4829 | Test MAE: 2.1757 | Test RMSE: 2.7355
+Lightweight CNN | Blur Level: F26 | Test Loss: 7.4601 | Test MAE: 2.1658 | Test RMSE: 2.7313
+Lightweight CNN | Blur Level: F29 | Test Loss: 7.4759 | Test MAE: 2.1691 | Test RMSE: 2.7342
+Lightweight CNN | Blur Level: F32 | Test Loss: 7.5096 | Test MAE: 2.1591 | Test RMSE: 2.7404
+Lightweight CNN | Blur Level: F35 | Test Loss: 7.6927 | Test MAE: 2.1737 | Test RMSE: 2.7736
+Lightweight CNN | Blur Level: F39 | Test Loss: 8.1207 | Test MAE: 2.2297 | Test RMSE: 2.8497
+Lightweight CNN | Blur Level: F42 | Test Loss: 8.7647 | Test MAE: 2.3065 | Test RMSE: 2.9605
+Lightweight CNN | Blur Level: F45 | Test Loss: 9.1769 | Test MAE: 2.3630 | Test RMSE: 3.0293
+Lightweight CNN | Blur Level: F48 | Test Loss: 10.4026 | Test MAE: 2.5429 | Test RMSE: 3.2253
+
+Loaded ResNet-18 checkpoint | Best Epoch: 22 | Best Val MAE: 1.8744
+ResNet-18 | Blur Level: F1 | Test Loss: 7.0149 | Test MAE: 2.0575 | Test RMSE: 2.6486
+ResNet-18 | Blur Level: F4 | Test Loss: 6.9731 | Test MAE: 2.0362 | Test RMSE: 2.6407
+ResNet-18 | Blur Level: F7 | Test Loss: 7.3169 | Test MAE: 2.0311 | Test RMSE: 2.7050
+ResNet-18 | Blur Level: F10 | Test Loss: 7.8965 | Test MAE: 2.0573 | Test RMSE: 2.8101
+ResNet-18 | Blur Level: F14 | Test Loss: 9.2299 | Test MAE: 2.2049 | Test RMSE: 3.0381
+ResNet-18 | Blur Level: F17 | Test Loss: 9.9176 | Test MAE: 2.3035 | Test RMSE: 3.1492
+ResNet-18 | Blur Level: F20 | Test Loss: 11.7293 | Test MAE: 2.5641 | Test RMSE: 3.4248
+ResNet-18 | Blur Level: F23 | Test Loss: 14.1848 | Test MAE: 2.8660 | Test RMSE: 3.7663
+ResNet-18 | Blur Level: F26 | Test Loss: 16.9698 | Test MAE: 3.1783 | Test RMSE: 4.1194
+ResNet-18 | Blur Level: F29 | Test Loss: 18.1618 | Test MAE: 3.2883 | Test RMSE: 4.2617
+ResNet-18 | Blur Level: F32 | Test Loss: 21.1361 | Test MAE: 3.5597 | Test RMSE: 4.5974
+ResNet-18 | Blur Level: F35 | Test Loss: 23.6008 | Test MAE: 3.7638 | Test RMSE: 4.8581
+ResNet-18 | Blur Level: F39 | Test Loss: 26.4071 | Test MAE: 3.9741 | Test RMSE: 5.1388
+ResNet-18 | Blur Level: F42 | Test Loss: 28.6882 | Test MAE: 4.1418 | Test RMSE: 5.3561
+ResNet-18 | Blur Level: F45 | Test Loss: 29.5130 | Test MAE: 4.1989 | Test RMSE: 5.4326
+ResNet-18 | Blur Level: F48 | Test Loss: 31.6692 | Test MAE: 4.3846 | Test RMSE: 5.6275
+
+Loaded ViT-B/16 checkpoint | Best Epoch: 53 | Best Val MAE: 1.5867
+ViT-B/16 | Blur Level: F1 | Test Loss: 6.7638 | Test MAE: 1.9093 | Test RMSE: 2.6007
+ViT-B/16 | Blur Level: F4 | Test Loss: 6.8519 | Test MAE: 1.9214 | Test RMSE: 2.6176
+ViT-B/16 | Blur Level: F7 | Test Loss: 7.0064 | Test MAE: 1.9351 | Test RMSE: 2.6470
+ViT-B/16 | Blur Level: F10 | Test Loss: 7.2016 | Test MAE: 1.9616 | Test RMSE: 2.6836
+ViT-B/16 | Blur Level: F14 | Test Loss: 7.5422 | Test MAE: 2.0112 | Test RMSE: 2.7463
+ViT-B/16 | Blur Level: F17 | Test Loss: 7.6028 | Test MAE: 2.0164 | Test RMSE: 2.7573
+ViT-B/16 | Blur Level: F20 | Test Loss: 8.0071 | Test MAE: 2.0868 | Test RMSE: 2.8297
+ViT-B/16 | Blur Level: F23 | Test Loss: 8.2201 | Test MAE: 2.1285 | Test RMSE: 2.8671
+ViT-B/16 | Blur Level: F26 | Test Loss: 8.7214 | Test MAE: 2.2298 | Test RMSE: 2.9532
+ViT-B/16 | Blur Level: F29 | Test Loss: 8.6767 | Test MAE: 2.2229 | Test RMSE: 2.9456
+ViT-B/16 | Blur Level: F32 | Test Loss: 9.2344 | Test MAE: 2.3525 | Test RMSE: 3.0388
+ViT-B/16 | Blur Level: F35 | Test Loss: 9.4118 | Test MAE: 2.4149 | Test RMSE: 3.0679
+ViT-B/16 | Blur Level: F39 | Test Loss: 9.8938 | Test MAE: 2.5436 | Test RMSE: 3.1454
+ViT-B/16 | Blur Level: F42 | Test Loss: 10.5931 | Test MAE: 2.6924 | Test RMSE: 3.2547
+ViT-B/16 | Blur Level: F45 | Test Loss: 10.5863 | Test MAE: 2.6998 | Test RMSE: 3.2537
+ViT-B/16 | Blur Level: F48 | Test Loss: 11.5943 | Test MAE: 2.8606 | Test RMSE: 3.4050
+
+Summary
+Model,Blur Level,Test Loss,Test MAE,Test RMSE,Best Epoch,Best Val MAE
+Lightweight CNN,F1,7.2184,2.1409,2.6867,30,1.8795
+Lightweight CNN,F4,7.2543,2.1439,2.6934,30,1.8795
+Lightweight CNN,F7,7.3449,2.1602,2.7101,30,1.8795
+Lightweight CNN,F10,7.4248,2.1698,2.7249,30,1.8795
+Lightweight CNN,F14,7.4850,2.1762,2.7359,30,1.8795
+Lightweight CNN,F17,7.4875,2.1774,2.7363,30,1.8795
+Lightweight CNN,F20,7.4879,2.1720,2.7364,30,1.8795
+Lightweight CNN,F23,7.4829,2.1757,2.7355,30,1.8795
+Lightweight CNN,F26,7.4601,2.1658,2.7313,30,1.8795
+Lightweight CNN,F29,7.4759,2.1691,2.7342,30,1.8795
+Lightweight CNN,F32,7.5096,2.1591,2.7404,30,1.8795
+Lightweight CNN,F35,7.6927,2.1737,2.7736,30,1.8795
+Lightweight CNN,F39,8.1207,2.2297,2.8497,30,1.8795
+Lightweight CNN,F42,8.7647,2.3065,2.9605,30,1.8795
+Lightweight CNN,F45,9.1769,2.3630,3.0293,30,1.8795
+Lightweight CNN,F48,10.4026,2.5429,3.2253,30,1.8795
+ResNet-18,F1,7.0149,2.0575,2.6486,22,1.8744
+ResNet-18,F4,6.9731,2.0362,2.6407,22,1.8744
+ResNet-18,F7,7.3169,2.0311,2.7050,22,1.8744
+ResNet-18,F10,7.8965,2.0573,2.8101,22,1.8744
+ResNet-18,F14,9.2299,2.2049,3.0381,22,1.8744
+ResNet-18,F17,9.9176,2.3035,3.1492,22,1.8744
+ResNet-18,F20,11.7293,2.5641,3.4248,22,1.8744
+ResNet-18,F23,14.1848,2.8660,3.7663,22,1.8744
+ResNet-18,F26,16.9698,3.1783,4.1194,22,1.8744
+ResNet-18,F29,18.1618,3.2883,4.2617,22,1.8744
+ResNet-18,F32,21.1361,3.5597,4.5974,22,1.8744
+ResNet-18,F35,23.6008,3.7638,4.8581,22,1.8744
+ResNet-18,F39,26.4071,3.9741,5.1388,22,1.8744
+ResNet-18,F42,28.6882,4.1418,5.3561,22,1.8744
+ResNet-18,F45,29.5130,4.1989,5.4326,22,1.8744
+ResNet-18,F48,31.6692,4.3846,5.6275,22,1.8744
+ViT-B/16,F1,6.7638,1.9093,2.6007,53,1.5867
+ViT-B/16,F4,6.8519,1.9214,2.6176,53,1.5867
+ViT-B/16,F7,7.0064,1.9351,2.6470,53,1.5867
+ViT-B/16,F10,7.2016,1.9616,2.6836,53,1.5867
+ViT-B/16,F14,7.5422,2.0112,2.7463,53,1.5867
+ViT-B/16,F17,7.6028,2.0164,2.7573,53,1.5867
+ViT-B/16,F20,8.0071,2.0868,2.8297,53,1.5867
+ViT-B/16,F23,8.2201,2.1285,2.8671,53,1.5867
+ViT-B/16,F26,8.7214,2.2298,2.9532,53,1.5867
+ViT-B/16,F29,8.6767,2.2229,2.9456,53,1.5867
+ViT-B/16,F32,9.2344,2.3525,3.0388,53,1.5867
+ViT-B/16,F35,9.4118,2.4149,3.0679,53,1.5867
+ViT-B/16,F39,9.8938,2.5436,3.1454,53,1.5867
+ViT-B/16,F42,10.5931,2.6924,3.2547,53,1.5867
+ViT-B/16,F45,10.5863,2.6998,3.2537,53,1.5867
+ViT-B/16,F48,11.5943,2.8606,3.4050,53,1.5867

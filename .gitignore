@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Environments
+.env
+.venv/
+venv/
+conda_envs/
+cells-gpu/
+
+# Data
+data/
+datasets/
+*.npz
+*.npy
+*.csv
+*.zip
+*.tar
+*.tar.gz
+
+# Model outputs/checkpoints
+checkpoints/
+runs/
+outputs/
+results/
+*.pth
+*.pt
+*.ckpt
+*.onnx
+
+# SLURM/logs
+jobs/logs/
+*.err
+slurm-*.out

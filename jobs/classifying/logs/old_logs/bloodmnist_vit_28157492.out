@@ -1,0 +1,22 @@
+Using device: cuda
+Epoch 1/20 | Train Loss: 0.4259 | Train Acc: 0.8451 | Val Loss: 0.1942 | Val Acc: 0.9305
+Epoch 2/20 | Train Loss: 0.1929 | Train Acc: 0.9322 | Val Loss: 0.2021 | Val Acc: 0.9246
+Epoch 3/20 | Train Loss: 0.1546 | Train Acc: 0.9454 | Val Loss: 0.1703 | Val Acc: 0.9375
+Epoch 4/20 | Train Loss: 0.1225 | Train Acc: 0.9558 | Val Loss: 0.1354 | Val Acc: 0.9521
+Epoch 5/20 | Train Loss: 0.1098 | Train Acc: 0.9619 | Val Loss: 0.1230 | Val Acc: 0.9614
+Epoch 6/20 | Train Loss: 0.0925 | Train Acc: 0.9693 | Val Loss: 0.1702 | Val Acc: 0.9486
+Epoch 7/20 | Train Loss: 0.0882 | Train Acc: 0.9688 | Val Loss: 0.1389 | Val Acc: 0.9568
+Epoch 8/20 | Train Loss: 0.0718 | Train Acc: 0.9764 | Val Loss: 0.1454 | Val Acc: 0.9498
+Epoch 9/20 | Train Loss: 0.0637 | Train Acc: 0.9790 | Val Loss: 0.1560 | Val Acc: 0.9574
+Epoch 10/20 | Train Loss: 0.0712 | Train Acc: 0.9752 | Val Loss: 0.1167 | Val Acc: 0.9650
+Epoch 11/20 | Train Loss: 0.0456 | Train Acc: 0.9844 | Val Loss: 0.1061 | Val Acc: 0.9650
+Epoch 12/20 | Train Loss: 0.0628 | Train Acc: 0.9775 | Val Loss: 0.1189 | Val Acc: 0.9609
+Epoch 13/20 | Train Loss: 0.0397 | Train Acc: 0.9857 | Val Loss: 0.1382 | Val Acc: 0.9579
+Epoch 14/20 | Train Loss: 0.0384 | Train Acc: 0.9871 | Val Loss: 0.1004 | Val Acc: 0.9690
+Epoch 15/20 | Train Loss: 0.0471 | Train Acc: 0.9848 | Val Loss: 0.1188 | Val Acc: 0.9632
+Epoch 16/20 | Train Loss: 0.0397 | Train Acc: 0.9857 | Val Loss: 0.1550 | Val Acc: 0.9550
+Epoch 17/20 | Train Loss: 0.0393 | Train Acc: 0.9860 | Val Loss: 0.1133 | Val Acc: 0.9673
+Epoch 18/20 | Train Loss: 0.0261 | Train Acc: 0.9912 | Val Loss: 0.1372 | Val Acc: 0.9673
+Epoch 19/20 | Train Loss: 0.0359 | Train Acc: 0.9881 | Val Loss: 0.1246 | Val Acc: 0.9626
+Epoch 20/20 | Train Loss: 0.0319 | Train Acc: 0.9892 | Val Loss: 0.1557 | Val Acc: 0.9509
+Final Test Results | Test Loss: 0.1695 | Test Acc: 0.9471

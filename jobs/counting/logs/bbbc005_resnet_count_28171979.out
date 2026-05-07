@@ -1,0 +1,53 @@
+Using device: cuda
+Total samples: 600
+Train samples: 420
+Val samples: 90
+Test samples: 90
+Epoch 1/30 | Train Loss: 3239.6720 | Train MAE: 49.2198 | Train RMSE: 56.9181 | Val Loss: 3000.1745 | Val MAE: 47.1872 | Val RMSE: 54.7738
+Saved new best model at epoch 1 with Val MAE: 47.1872
+Epoch 2/30 | Train Loss: 2833.0670 | Train MAE: 46.5935 | Train RMSE: 53.2266 | Val Loss: 2363.3683 | Val MAE: 42.6453 | Val RMSE: 48.6145
+Saved new best model at epoch 2 with Val MAE: 42.6453
+Epoch 3/30 | Train Loss: 2480.8357 | Train MAE: 43.9339 | Train RMSE: 49.8080 | Val Loss: 1968.3920 | Val MAE: 39.2959 | Val RMSE: 44.3666
+Saved new best model at epoch 3 with Val MAE: 39.2959
+Epoch 4/30 | Train Loss: 2128.0459 | Train MAE: 41.0187 | Train RMSE: 46.1307 | Val Loss: 1465.6064 | Val MAE: 34.3938 | Val RMSE: 38.2832
+Saved new best model at epoch 4 with Val MAE: 34.3938
+Epoch 5/30 | Train Loss: 1771.9045 | Train MAE: 37.7342 | Train RMSE: 42.0940 | Val Loss: 1235.2625 | Val MAE: 31.8763 | Val RMSE: 35.1463
+Saved new best model at epoch 5 with Val MAE: 31.8763
+Epoch 6/30 | Train Loss: 1398.0538 | Train MAE: 33.8324 | Train RMSE: 37.3906 | Val Loss: 851.4108 | Val MAE: 26.7750 | Val RMSE: 29.1789
+Saved new best model at epoch 6 with Val MAE: 26.7750
+Epoch 7/30 | Train Loss: 1064.9116 | Train MAE: 29.7075 | Train RMSE: 32.6330 | Val Loss: 698.6642 | Val MAE: 24.3670 | Val RMSE: 26.4323
+Saved new best model at epoch 7 with Val MAE: 24.3670
+Epoch 8/30 | Train Loss: 812.1106 | Train MAE: 25.4544 | Train RMSE: 28.4976 | Val Loss: 307.0131 | Val MAE: 15.2009 | Val RMSE: 17.5218
+Saved new best model at epoch 8 with Val MAE: 15.2009
+Epoch 9/30 | Train Loss: 566.1833 | Train MAE: 21.5167 | Train RMSE: 23.7946 | Val Loss: 303.6546 | Val MAE: 15.6736 | Val RMSE: 17.4257
+Epoch 10/30 | Train Loss: 391.7485 | Train MAE: 17.6998 | Train RMSE: 19.7926 | Val Loss: 232.4922 | Val MAE: 13.6568 | Val RMSE: 15.2477
+Saved new best model at epoch 10 with Val MAE: 13.6568
+Epoch 11/30 | Train Loss: 265.0556 | Train MAE: 14.5437 | Train RMSE: 16.2805 | Val Loss: 238.3459 | Val MAE: 14.1119 | Val RMSE: 15.4385
+Epoch 12/30 | Train Loss: 220.9562 | Train MAE: 12.4271 | Train RMSE: 14.8646 | Val Loss: 130.4178 | Val MAE: 10.1018 | Val RMSE: 11.4201
+Saved new best model at epoch 12 with Val MAE: 10.1018
+Epoch 13/30 | Train Loss: 134.2036 | Train MAE: 9.5176 | Train RMSE: 11.5846 | Val Loss: 88.8451 | Val MAE: 8.2630 | Val RMSE: 9.4258
+Saved new best model at epoch 13 with Val MAE: 8.2630
+Epoch 14/30 | Train Loss: 94.6197 | Train MAE: 7.8661 | Train RMSE: 9.7273 | Val Loss: 141.1751 | Val MAE: 10.0804 | Val RMSE: 11.8817
+Epoch 15/30 | Train Loss: 104.8235 | Train MAE: 8.0304 | Train RMSE: 10.2383 | Val Loss: 40.0166 | Val MAE: 5.3488 | Val RMSE: 6.3259
+Saved new best model at epoch 15 with Val MAE: 5.3488
+Epoch 16/30 | Train Loss: 100.2028 | Train MAE: 7.7632 | Train RMSE: 10.0101 | Val Loss: 41.0296 | Val MAE: 5.4011 | Val RMSE: 6.4054
+Epoch 17/30 | Train Loss: 66.7563 | Train MAE: 6.2880 | Train RMSE: 8.1704 | Val Loss: 193.6414 | Val MAE: 12.8773 | Val RMSE: 13.9155
+Epoch 18/30 | Train Loss: 70.7967 | Train MAE: 6.5141 | Train RMSE: 8.4141 | Val Loss: 50.4725 | Val MAE: 6.3098 | Val RMSE: 7.1044
+Epoch 19/30 | Train Loss: 46.4288 | Train MAE: 5.2434 | Train RMSE: 6.8139 | Val Loss: 18.3530 | Val MAE: 3.3933 | Val RMSE: 4.2840
+Saved new best model at epoch 19 with Val MAE: 3.3933
+Epoch 20/30 | Train Loss: 47.2991 | Train MAE: 5.0626 | Train RMSE: 6.8774 | Val Loss: 15.5032 | Val MAE: 3.0379 | Val RMSE: 3.9374
+Saved new best model at epoch 20 with Val MAE: 3.0379
+Epoch 21/30 | Train Loss: 58.6387 | Train MAE: 6.1668 | Train RMSE: 7.6576 | Val Loss: 10.7049 | Val MAE: 2.6366 | Val RMSE: 3.2718
+Saved new best model at epoch 21 with Val MAE: 2.6366
+Epoch 22/30 | Train Loss: 42.8267 | Train MAE: 4.8506 | Train RMSE: 6.5442 | Val Loss: 6.1078 | Val MAE: 1.8744 | Val RMSE: 2.4714
+Saved new best model at epoch 22 with Val MAE: 1.8744
+Epoch 23/30 | Train Loss: 37.5778 | Train MAE: 4.5117 | Train RMSE: 6.1301 | Val Loss: 13.8887 | Val MAE: 3.0395 | Val RMSE: 3.7268
+Epoch 24/30 | Train Loss: 45.3832 | Train MAE: 5.2105 | Train RMSE: 6.7367 | Val Loss: 8.5799 | Val MAE: 2.2782 | Val RMSE: 2.9291
+Epoch 25/30 | Train Loss: 64.7391 | Train MAE: 6.0585 | Train RMSE: 8.0461 | Val Loss: 33.4217 | Val MAE: 5.0313 | Val RMSE: 5.7812
+Epoch 26/30 | Train Loss: 62.0954 | Train MAE: 6.1798 | Train RMSE: 7.8801 | Val Loss: 10.9192 | Val MAE: 2.7096 | Val RMSE: 3.3044
+Epoch 27/30 | Train Loss: 63.6341 | Train MAE: 6.0869 | Train RMSE: 7.9771 | Val Loss: 13.6145 | Val MAE: 3.0301 | Val RMSE: 3.6898
+Epoch 28/30 | Train Loss: 52.3480 | Train MAE: 5.2952 | Train RMSE: 7.2352 | Val Loss: 9.7362 | Val MAE: 2.5741 | Val RMSE: 3.1203
+Epoch 29/30 | Train Loss: 38.6066 | Train MAE: 4.8120 | Train RMSE: 6.2134 | Val Loss: 9.0184 | Val MAE: 2.4688 | Val RMSE: 3.0031
+Epoch 30/30 | Train Loss: 36.1422 | Train MAE: 4.6375 | Train RMSE: 6.0118 | Val Loss: 12.6210 | Val MAE: 2.7463 | Val RMSE: 3.5526
+Loading best model from epoch 22 with Val MAE: 1.8744
+Final Test Results using best validation checkpoint | Best Epoch: 22 | Best Val MAE: 1.8744 | Test Loss: 7.0149 | Test MAE: 2.0575 | Test RMSE: 2.6486

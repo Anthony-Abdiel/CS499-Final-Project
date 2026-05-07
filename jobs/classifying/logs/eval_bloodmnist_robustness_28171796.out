@@ -1,0 +1,52 @@
+Using device: cuda
+
+Loaded Lightweight CNN checkpoint | Best Epoch: 33 | Best Val Acc: 0.9340
+Lightweight CNN | Condition: normal | Test Loss: 0.2729 | Test Acc: 0.9281
+Lightweight CNN | Condition: blur_sigma_0.5 | Test Loss: 0.3851 | Test Acc: 0.8992
+Lightweight CNN | Condition: blur_sigma_1.0 | Test Loss: 0.9720 | Test Acc: 0.7928
+Lightweight CNN | Condition: blur_sigma_2.0 | Test Loss: 1.1866 | Test Acc: 0.7638
+Lightweight CNN | Condition: noise_std_0.05 | Test Loss: 0.6143 | Test Acc: 0.8702
+Lightweight CNN | Condition: noise_std_0.1 | Test Loss: 2.6816 | Test Acc: 0.7021
+Lightweight CNN | Condition: noise_std_0.2 | Test Loss: 7.7120 | Test Acc: 0.5583
+
+Loaded ResNet-18 checkpoint | Best Epoch: 19 | Best Val Acc: 0.9597
+ResNet-18 | Condition: normal | Test Loss: 0.2166 | Test Acc: 0.9547
+ResNet-18 | Condition: blur_sigma_0.5 | Test Loss: 0.2129 | Test Acc: 0.9562
+ResNet-18 | Condition: blur_sigma_1.0 | Test Loss: 0.2046 | Test Acc: 0.9567
+ResNet-18 | Condition: blur_sigma_2.0 | Test Loss: 0.2036 | Test Acc: 0.9547
+ResNet-18 | Condition: noise_std_0.05 | Test Loss: 0.3287 | Test Acc: 0.9322
+ResNet-18 | Condition: noise_std_0.1 | Test Loss: 0.9124 | Test Acc: 0.8351
+ResNet-18 | Condition: noise_std_0.2 | Test Loss: 5.8610 | Test Acc: 0.3911
+
+Loaded ViT-B/16 checkpoint | Best Epoch: 24 | Best Val Acc: 0.9690
+ViT-B/16 | Condition: normal | Test Loss: 0.1517 | Test Acc: 0.9567
+ViT-B/16 | Condition: blur_sigma_0.5 | Test Loss: 0.1520 | Test Acc: 0.9564
+ViT-B/16 | Condition: blur_sigma_1.0 | Test Loss: 0.1531 | Test Acc: 0.9562
+ViT-B/16 | Condition: blur_sigma_2.0 | Test Loss: 0.1561 | Test Acc: 0.9538
+ViT-B/16 | Condition: noise_std_0.05 | Test Loss: 0.1645 | Test Acc: 0.9532
+ViT-B/16 | Condition: noise_std_0.1 | Test Loss: 0.1803 | Test Acc: 0.9509
+ViT-B/16 | Condition: noise_std_0.2 | Test Loss: 0.2961 | Test Acc: 0.9214
+
+Summary
+Model,Condition,Corruption Type,Severity,Test Loss,Test Accuracy,Best Epoch,Best Val Accuracy
+Lightweight CNN,normal,none,0.0,0.2729,0.9281,33,0.9340
+Lightweight CNN,blur,gaussian_blur,0.5,0.3851,0.8992,33,0.9340
+Lightweight CNN,blur,gaussian_blur,1.0,0.9720,0.7928,33,0.9340
+Lightweight CNN,blur,gaussian_blur,2.0,1.1866,0.7638,33,0.9340
+Lightweight CNN,noise,gaussian_noise,0.05,0.6143,0.8702,33,0.9340
+Lightweight CNN,noise,gaussian_noise,0.1,2.6816,0.7021,33,0.9340
+Lightweight CNN,noise,gaussian_noise,0.2,7.7120,0.5583,33,0.9340
+ResNet-18,normal,none,0.0,0.2166,0.9547,19,0.9597
+ResNet-18,blur,gaussian_blur,0.5,0.2129,0.9562,19,0.9597
+ResNet-18,blur,gaussian_blur,1.0,0.2046,0.9567,19,0.9597
+ResNet-18,blur,gaussian_blur,2.0,0.2036,0.9547,19,0.9597
+ResNet-18,noise,gaussian_noise,0.05,0.3287,0.9322,19,0.9597
+ResNet-18,noise,gaussian_noise,0.1,0.9124,0.8351,19,0.9597
+ResNet-18,noise,gaussian_noise,0.2,5.8610,0.3911,19,0.9597
+ViT-B/16,normal,none,0.0,0.1517,0.9567,24,0.9690
+ViT-B/16,blur,gaussian_blur,0.5,0.1520,0.9564,24,0.9690
+ViT-B/16,blur,gaussian_blur,1.0,0.1531,0.9562,24,0.9690
+ViT-B/16,blur,gaussian_blur,2.0,0.1561,0.9538,24,0.9690
+ViT-B/16,noise,gaussian_noise,0.05,0.1645,0.9532,24,0.9690
+ViT-B/16,noise,gaussian_noise,0.1,0.1803,0.9509,24,0.9690
+ViT-B/16,noise,gaussian_noise,0.2,0.2961,0.9214,24,0.9690
