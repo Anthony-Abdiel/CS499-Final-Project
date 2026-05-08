@@ -7,7 +7,9 @@ This project investigates the performance and robustness of different deep learn
 
 The goal is to compare how different model architectures perform under normal image conditions and degraded image conditions such as blur and noise. This allows the project to evaluate not only raw model performance, but also how well each architecture handles lower-quality image data that may appear in real-world biomedical imaging scenarios.
 
-## Project Overview
+---
+
+# Project Overview
 
 Biomedical image analysis often requires models to classify cell types, detect abnormalities, or count biological structures in microscopy images. In real-world settings, image quality can vary due to focus issues, sensor noise, lighting conditions, and acquisition differences.
 
@@ -29,21 +31,93 @@ This project compares three model families:
 
 The models are evaluated on both clean and corrupted images to compare their robustness.
 
-## Datasets
+---
 
-### BloodMNIST
+# Datasets
+
+This project uses two publicly available biomedical imaging datasets.
+
+## BloodMNIST
 
 BloodMNIST is part of the MedMNIST collection. It contains small RGB blood cell images labeled into multiple cell classes. In this project, BloodMNIST is used for the classification task.
 
 The classification models are trained to predict the correct blood cell class from each image.
 
-### BBBC005
+## BBBC005
 
 BBBC005 is a synthetic microscopy dataset from the Broad Bioimage Benchmark Collection. It contains simulated fluorescence microscopy images with known object counts.
 
 In this project, BBBC005 is used for the counting/regression task, where models estimate the number of cells or objects in an image.
 
-## Project Structure
+## Dataset Download Instructions
+
+The raw datasets are **not included** in this repository or submission package because they are too large to include directly.
+
+Detailed dataset download and setup instructions are provided in:
+
+```text
+data/README.md
+```
+
+That file explains:
+
+- How to download BloodMNIST.
+- How to download BBBC005.
+- How to organize the datasets into the required folder structure.
+- How to verify that the datasets were installed correctly.
+- How to troubleshoot common dataset setup issues.
+
+The project also includes a setup script that can download and organize both datasets automatically.
+
+Recommended setup command from the project root:
+
+```bash
+bash data_setup.sh
+```
+
+> Note: If the setup script is currently named `data_setup.py`, rename it to `data_setup.sh` before running it, because the script uses Bash syntax rather than Python syntax.
+
+Rename command:
+
+```bash
+mv data_setup.py data_setup.sh
+```
+
+Then run:
+
+```bash
+bash data_setup.sh
+```
+
+After setup, the expected dataset structure is:
+
+```text
+data/
+├── README.md
+├── bloodmnist/
+│   └── bloodmnist.npz
+└── bbbc005/
+    ├── images/
+    └── ground_truth/
+```
+
+You can verify the dataset setup with:
+
+```bash
+test -f data/bloodmnist/bloodmnist.npz && echo "BloodMNIST found" || echo "BloodMNIST missing"
+test -d data/bbbc005/images && echo "BBBC005 images folder found" || echo "BBBC005 images folder missing"
+test -d data/bbbc005/ground_truth && echo "BBBC005 ground truth folder found" || echo "BBBC005 ground truth folder missing"
+```
+
+For complete dataset instructions, see:
+
+```text
+data/README.md
+```
+
+---
+
+# Project Structure
 
 The project structure is as shown below:
 
@@ -51,6 +125,8 @@ The project structure is as shown below:
 .
 └── project/
     ├── data/
+    │   └── README.md
+    ├── data_setup.sh
     ├── jobs/
     ├── src_classifying/
     │   ├── datasets/
@@ -94,9 +170,11 @@ git clone https://github.com/Anthony-Abdiel/CS499-Final-Project.git
 cd CS499-Final-Project
 ```
 
+---
+
 ## 2. Create or Activate a Python Environment
 
-This project should be run inside a Python environment with PyTorch, torchvision, NumPy, matplotlib, pandas, scikit-learn, tqdm, and Pillow installed.
+This project should be run inside a Python environment with PyTorch, torchvision, NumPy, matplotlib, pandas, scikit-learn, tqdm, Pillow, and MedMNIST installed.
 
 ### Option A: Create a New Conda Environment
 
@@ -114,7 +192,7 @@ pip install torch torchvision torchaudio
 Then install the remaining dependencies:
 
 ```bash
-pip install numpy matplotlib pandas scikit-learn tqdm pillow
+pip install numpy matplotlib pandas scikit-learn tqdm pillow medmnist
 ```
 
 If a `requirements.txt` file is provided, install dependencies using:
@@ -152,38 +230,103 @@ True
 
 when the code is running on a GPU-enabled node with the correct PyTorch installation.
 
+---
+
 ## 3. Set Up the Data Directory
 
-Datasets are not stored directly in this GitHub repository because they are too large for normal Git tracking.
+Datasets are not stored directly in this repository because they are too large for normal Git tracking.
 
-Place datasets inside the `data/` directory.
+To set up the datasets, first read the detailed instructions in:
 
-Expected layout:
+```text
+data/README.md
+```
+
+Then, from the project root directory, run the included setup script:
+
+```bash
+bash data_setup.sh
+```
+
+If the script is still named `data_setup.py`, rename it first:
+
+```bash
+mv data_setup.py data_setup.sh
+bash data_setup.sh
+```
+
+The setup script downloads and organizes the datasets into this expected structure:
 
 ```text
 data/
+├── README.md
 ├── bloodmnist/
 │   └── bloodmnist.npz
-│
 └── bbbc005/
-    └── ...
+    ├── images/
+    └── ground_truth/
 ```
 
-The BloodMNIST dataset should be placed in:
+The BloodMNIST dataset should be located at:
 
 ```text
 data/bloodmnist/bloodmnist.npz
 ```
 
-The BBBC005 dataset should be placed in:
+The BBBC005 dataset should be located under:
 
 ```text
 data/bbbc005/
 ```
 
-## 4. Keep Large Files Out of Git
+with the image and ground truth folders inside it:
 
-Datasets, checkpoints, generated results, and log files should not be committed to GitHub.
+```text
+data/bbbc005/images/
+data/bbbc005/ground_truth/
+```
+
+If the automatic setup script fails, follow the manual download instructions in:
+
+```text
+data/README.md
+```
+
+---
+
+## 4. Checkpoints
+
+Model checkpoint files are **not included** in this submission package due to file size.
+
+The project is still reproducible without checkpoints, but models must be trained before running evaluation scripts that load saved `.pt` files. The training scripts save the best model checkpoints into the appropriate checkpoint directories.
+
+Classification checkpoints are generated by running:
+
+```bash
+python -m src_classifying.train.train_bloodmnist_cnn
+python -m src_classifying.train.train_bloodmnist_resnet18
+python -m src_classifying.train.train_bloodmnist_vit
+```
+
+Counting checkpoints are generated by running:
+
+```bash
+python -m src_counting.train.train_bbbc005_cnn
+python -m src_counting.train.train_bbbc005_resnet18
+python -m src_counting.train.train_bbbc005_vit
+```
+
+After the checkpoints have been generated, the robustness and evaluation scripts can be run.
+
+If checkpoints are not present, evaluation scripts that load saved `.pt` model files may fail until the corresponding training scripts have been run.
+
+Generated plots, figures, and result summaries are included where possible so the project results can still be reviewed without rerunning every experiment from scratch.
+
+---
+
+## 5. Keep Large Files Out of Git
+
+Datasets, checkpoints, generated logs, and other large files should not be committed to GitHub.
 
 A recommended `.gitignore` is:
 
@@ -201,11 +344,10 @@ conda_envs/
 cells-gpu/
 
 # Data
-data/
-datasets/
+data/bloodmnist/
+data/bbbc005/
 *.npz
 *.npy
-*.csv
 *.zip
 *.tar
 *.tar.gz
@@ -214,7 +356,6 @@ datasets/
 checkpoints/
 runs/
 outputs/
-results/
 *.pth
 *.pt
 *.ckpt
@@ -231,6 +372,14 @@ slurm-*.out
 .vscode/
 .idea/
 ```
+
+Important: the repository should still include:
+
+```text
+data/README.md
+```
+
+The repository may also include generated result figures and tables if they are needed for grading or reproducibility.
 
 Before committing, check the files Git is tracking:
 
@@ -255,18 +404,20 @@ Classification experiments are run on BloodMNIST.
 Example commands:
 
 ```bash
-python -m src.train.train_bloodmnist_cnn
+python -m src_classifying.train.train_bloodmnist_cnn
 ```
 
 ```bash
-python -m src.train.train_bloodmnist_resnet18
+python -m src_classifying.train.train_bloodmnist_resnet18
 ```
 
 ```bash
-python -m src.train.train_bloodmnist_vit
+python -m src_classifying.train.train_bloodmnist_vit
 ```
 
 These scripts train the selected model, evaluate validation performance, and save the best checkpoint.
+
+---
 
 ## Running Counting Experiments
 
@@ -275,18 +426,20 @@ Counting experiments are run on BBBC005.
 Example commands:
 
 ```bash
-python -m src.train.train_bbbc005_cnn
+python -m src_counting.train.train_bbbc005_cnn
 ```
 
 ```bash
-python -m src.train.train_bbbc005_resnet18
+python -m src_counting.train.train_bbbc005_resnet18
 ```
 
 ```bash
-python -m src.train.train_bbbc005_vit
+python -m src_counting.train.train_bbbc005_vit
 ```
 
 These scripts train the selected model to estimate the number of objects in each image.
+
+---
 
 ## Evaluating Robustness
 
@@ -305,6 +458,10 @@ noise_std_0.20
 ```
 
 The purpose of these tests is to determine how well each model maintains performance when image quality is reduced.
+
+If model checkpoints are not included or have not been generated yet, run the training scripts first before running robustness or evaluation scripts.
+
+---
 
 ## Running on the HPC with SLURM
 
@@ -329,7 +486,7 @@ module load anaconda3
 source $(conda info --base)/etc/profile.d/conda.sh
 conda activate cells-gpu
 
-python -m src.train.train_bloodmnist_resnet18
+python -m src_classifying.train.train_bloodmnist_resnet18
 ```
 
 Submit the job with:
@@ -356,7 +513,9 @@ View error logs with:
 cat jobs/logs/bloodmnist_resnet18_<job_id>.err
 ```
 
-## Expected Outputs
+---
+
+# Expected Outputs
 
 Training scripts generally produce:
 
@@ -380,6 +539,8 @@ Counting experiments report metrics such as:
 - Test loss
 - Robustness under blur
 - Robustness under noise
+
+Generated figures and plots are included where possible in the project folders so the reported results can be reviewed without rerunning every experiment.
 
 ---
 
@@ -406,6 +567,36 @@ This project investigates whether:
 
 ---
 
+# Reproducibility Notes
+
+To reproduce the project from a fresh clone:
+
+1. Clone the repository.
+2. Create or activate the Python environment.
+3. Install dependencies from `requirements.txt` if provided.
+4. Read `data/README.md`.
+5. Run the dataset setup script:
+
+```bash
+bash data_setup.sh
+```
+
+6. Verify that the datasets exist:
+
+```bash
+test -f data/bloodmnist/bloodmnist.npz && echo "BloodMNIST found" || echo "BloodMNIST missing"
+test -d data/bbbc005/images && echo "BBBC005 images folder found" || echo "BBBC005 images folder missing"
+test -d data/bbbc005/ground_truth && echo "BBBC005 ground truth folder found" || echo "BBBC005 ground truth folder missing"
+```
+
+7. Run the desired training scripts to generate model checkpoints.
+
+8. Run the desired evaluation or robustness scripts from the project root.
+
+If only reviewing the completed project outputs, see the included generated result plots, tables, and figures.
+
+---
+
 # Acknowledgements
 
 This project uses publicly available biomedical imaging datasets and open-source machine learning tools.
@@ -426,10 +617,13 @@ Software and libraries used in this project include:
 - scikit-learn
 - tqdm
 - Pillow
+- MedMNIST
 
 This project was completed as part of a CS499 final project focused on biomedical image analysis, model comparison, and robustness evaluation.
 
-## Author
+---
+
+# Author
 
 Anthony Narvaez  
 CS499 Final Project
